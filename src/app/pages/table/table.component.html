@@ -1,0 +1,207 @@
+<style>
+body{
+  background-color: #E8E8E8;
+}
+h4{
+  color: #B11B1B;
+  margin: auto;
+  width: 30%;
+  
+  padding: 10px;
+}
+
+
+
+
+  .card{
+   
+    margin: auto;
+    width: 70%;
+    padding: 10px;
+  }
+  .container{
+    margin: auto;
+  width: 70%;
+  
+  padding: 10px;
+  }
+  button{
+    margin: auto;
+
+    padding: 10px;
+    width: 11%;
+    background-color:#999900;
+  }
+th{
+color: #000;
+}
+td{
+color: #000;
+}
+input{
+  margin: auto;
+    width: 70%;
+    padding: 10px;
+    width: 30%;
+}
+div.input-group {
+  width: 500px;
+  margin: auto;
+  border: 3px ;
+}
+div.card {
+  width: 700px;
+  margin: auto;
+  border: 3px ;
+}
+
+
+</style>
+<body>
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> <b> Your Employees</b></h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table" >
+            <thead class=" text-primary">
+              
+              <th>
+                First Name
+              </th>
+              <th>
+                Last Name
+              </th>
+              <th>
+                Phone Number
+              </th>
+              <th class="text-right">
+                role
+              </th>
+              <th class="text-right">
+                department
+              </th>
+              <th class="text-right">
+                email
+              </th>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let useer of Users" >
+                <td>
+                  {{useer.firstName}}
+                </td>
+                <td>
+                  {{useer.lastName}}
+                </td>
+                <td>
+                  {{useer.phoneNumber}}
+                </td>
+                <td class="text-right">
+                  {{useer.role}}
+                </td>
+                <td class="text-right">
+                  {{useer.department}}
+                </td>
+                <td class="text-right">
+                  {{useer.email}}
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>  <br><br><br>  <br><br><br>
+<div class="card">
+    
+  <form #form="ngForm" autocomplete="off" >
+    <div class="form-group">
+    
+      <h4><b>Add Employee</b></h4>
+      
+      <div class="input-group ">
+        <input  name="FirstName"  [(ngModel)]="FirstName" class="form-control" type="text" placeholder="FirstName" required/>
+        
+      </div>
+      
+      <div class="input-group input-group-icon">
+        <input name="LastName"  [(ngModel)]="LastName" class="form-control" type="text" placeholder="Lastt Name" required/>
+        
+      </div>
+      <div class="input-group input-group-icon">
+        <input name="EmployeeCin"  [(ngModel)]="EmployeeCin" class="form-control" type="number" placeholder="CIN" required/>
+        
+      </div>
+
+      <div class="input-group input-group-icon">
+        <input name="EmployeeUsername"  [(ngModel)]="EmployeeUsername" class="form-control" type="text" placeholder="UserName" required/>
+        
+      </div>
+      
+      <div class="input-group input-group-icon">
+        <input name="Department"  [(ngModel)]="Department" class="form-control"  type="text" placeholder="Depratement" required/>
+        
+      </div>
+      <div class="input-group input-group-icon">
+        <input name="Email"  [(ngModel)]="Email" class="form-control"  type="email" placeholder="Email Adress" required/>
+        
+      </div> 
+    
+
+      <button   class="btn  btn-block btn-large" (click)="ajoutemploye()" >Submit</button>
+    </div>
+  </form>
+</div>
+<br>
+<div class="card"> 
+
+<form #form="ngForm" autocomplete="off" >
+    <div class="form-group">
+      <h4><b>Choose employee to creat contract</b> </h4>
+      <div class="input-group input-group-icon">
+      <input style="width: 10px;" name="EmployeeEmail"  [(ngModel)]="EmployeeEmail" class="form-control"  type="email" placeholder="Email Adress" required/>
+      <div class="input-icon"></div>
+    </div> 
+  <button   class="btn btn-primary btn-block btn-large" (click)="choisirEmployee()" >choose</button>
+  </div>
+</form>
+
+
+  <form #form="ngForm" autocomplete="off" >
+<div class="form-group">
+<div class="row">
+<h4><b>Creat contract</b></h4><br>
+<div class="input-group input-group-icon">
+  <input style="width: 50%;" style="margin: auto;" name="EmployeeEmail"  [(ngModel)]="EmployeeEmail" class="form-control"  type="email" placeholder="Email Adress" required/>
+  
+</div>
+<div class="input-group ">
+ <input  name="AbsenceDays"  [(ngModel)]="AbsenceDays" class="form-control" type="number" placeholder="AbsenceDays" required/>
+ <div class="input-icon"></div>
+</div>
+
+
+<div class="input-group ">
+ <input name="years"  [(ngModel)]="years" class="form-control" type="number" placeholder="years" required/>
+ <div class="input-icon"></div>
+</div>
+
+<div class="input-group ">
+ <input name="Type"  [(ngModel)]="Type" class="form-control" type="text" placeholder="Type" required/>
+ <div class="input-icon"></div>
+</div>
+</div>
+<button   class="btn btn-primary btn-block btn-large" (click)="ajoutContract()" >Submit</button>
+</div>
+</form>
+
+</div>
+
+
+</body>

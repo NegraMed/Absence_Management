@@ -1,0 +1,111 @@
+<style>
+    body{
+      background-color: #E8E8E8;
+    }
+    h4{
+      color: #B11B1B;
+      margin: auto;
+      width: 30%;
+      
+      padding: 10px;
+    }
+    
+    
+    
+    
+      .card{
+       
+        margin: auto;
+        width: 70%;
+        padding: 10px;
+      }
+      .container{
+        margin: auto;
+      width: 70%;
+      
+      padding: 10px;
+      }
+      button{
+        margin: auto;
+    
+        padding: 10px;
+        width: 11%;
+        background-color:#999900;
+      }
+    th{
+    color: #000;
+    }
+    td{
+    color: #000;
+    }
+    input{
+      margin: auto;
+        width: 70%;
+        padding: 10px;
+        width: 30%;
+    }
+    div.input-group {
+      width: 800px;
+      margin: auto;
+      border: 3px ;
+    }
+    div.card {
+      width: 100%;
+      margin: auto;
+      border: 3px ;
+    }
+    
+    
+    </style>
+<div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> <b> Your Requests On Wait</b></h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table" >
+            <thead class=" text-primary">
+              
+              <th class="text-center">
+                Date
+              </th>
+              <th class="text-center">
+                NDays
+              </th>
+              <th class="text-center">
+                Statue
+              </th>
+              <th class="text-center">
+                Comment
+              </th>
+            </thead>
+            <tbody>
+              
+              <tr *ngFor="let useer of Users" >
+                <td>
+                  {{useer.firstName}}
+                </td>
+                <td>
+                  {{useer.lastName}}
+                </td>
+                <td>
+                  {{useer.phoneNumber}}
+                </td>
+                <td class="text-right">
+                  {{useer.role}}
+                </td>
+                <td class="text-right">
+                  {{useer.department}}
+                </td>
+                <td class="text-right">
+                  {{useer.email}}
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

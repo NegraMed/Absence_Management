@@ -1,0 +1,47 @@
+<style>
+    
+  .sidebar-wrapper{
+    background-color: #1c1c1c;
+  }
+  P{
+    COLOR: #f8b739;
+  }
+  li{
+    COLOR: #f8b739;
+  }
+  i{
+    COLOR: #f8b739;
+   
+  }
+  a{
+    COLOR: #f8b739;
+  }
+  button{
+        margin: auto;
+    
+        padding: 10px;
+        width: 50%;
+        background-color:#f8b739;
+      }
+
+</style>
+<body>
+<div class="sidebar-wrapper">
+
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <li>
+          <div *ngIf="!isShow"  >
+            <button class="btn  btn-block btn-large"  [routerLink]="'/home'" > Sign out </button>
+          </div>
+        </li>
+    </ul>
+</div>
+
+</body>

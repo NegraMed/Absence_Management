@@ -1,0 +1,122 @@
+<style>
+  body{
+    background-color: #E8E8E8;
+  }
+  h4{
+    color: #B11B1B;
+    margin: auto;
+    width: 30%;
+    
+    padding: 10px;
+  }
+  
+  
+  
+  
+    .card{
+     
+      margin: auto;
+    width: 70%;
+    
+    padding: 10px;
+    }
+    .container{
+      margin: auto;
+    width: 70%;
+    
+    padding: 10px;
+    }
+    button{
+      margin: auto;
+  
+      padding: 10px;
+      width: 70%;
+      
+    }
+  th{
+  color: #000;
+  }
+  td{
+  color: #000;
+  }
+  input{
+    margin: auto;
+      width: 70%;
+      padding: 10px;
+      width: 30%;
+  }
+  .form-control{
+    margin: auto;
+      width: 10%;
+      padding: 10px;
+      width: 30%;
+  }
+  .accept{
+    background-color:green;
+  }
+  .refuse{
+    background-color:red;
+  }
+  
+  
+  </style>
+  <body>
+ <div class="col-md-12">
+  <div class="card">
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table" >
+          <thead class=" text-primary">
+            
+            <th>
+              Employee
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              statue
+            </th>
+            <th >
+              NDays
+            </th>
+            <th >
+            action
+          </th>
+            <th >
+              comment
+            </th>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let useer of Users" >
+              <td>
+                {{requests.Email}}
+              </td>
+              <td>
+                {{requests.Date}}
+              </td>
+              <td>
+                {{requests.statue}}
+              </td>
+              <td>
+                {{requests.NDays}}
+              </td>
+              <td>
+                <button class="btn  btn-block btn-large accept">accept</button><br>
+                <button class="btn  btn-block btn-large refuse">refuse</button>
+              </td>
+              <td>
+                <input type="text" >
+              </td>
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
